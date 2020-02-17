@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<div class="form">
+		<div class="btn-opt">
+			<p class="active">signup</p>
+			<p>login</p>
+		</div>
+		<div class="box">
+			<form class="form1">
+				<div class="name">
+					<div class="wrap">
+						<div class="phone">
+							<input type="text" name="" placeholder="Name" required="">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+					<div class="wrap">
+						<div class="phone">
+							<input type="text" name="" placeholder="Surname" required="">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<div class="phone">
+					<input type="number" name="" placeholder="Phoen Number" required="">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="phone">
+					<input type="email" name="" placeholder="Email id" required="">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="btn">
+					<button>SUBMIT</button>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<p class="edit">Already have an Account ?&nbsp&nbsp<span style="font-family: consolas;color: #177dc5eb;cursor: pointer;">Click Here</span></p>
+			</form>
+
+
+			<form class="form1 form2">
+				<div class="inputbox">
+					<input type="text" name="" required="">
+					<label>Username</label>
+				</div>
+				<div class="inputbox">
+					<input type="text" name="" required="">
+					<label>password</label>
+				</div>
+				<div class="btn">
+					<button>LOGIN</button>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		document.querySelectorAll('.btn-opt p').forEach(function(a){
+			a.addEventListener("click",()=>{
+				document.querySelectorAll('.btn-opt p').forEach((e)=>{
+					e.classList.remove("active");
+				})
+				a.classList.add("active");
+			})
+		})
+
+		document.querySelectorAll('.btn-opt p')[1].addEventListener("click",()=>{
+			document.querySelector(".box").style.left = "-100%";
+			document.querySelector(".box").style.transition = "0.5s";
+		})
+		document.querySelector("body > div > div.box > form:nth-child(1) > p > span").addEventListener("click",()=>{
+			document.querySelector(".box").style.left = "-100%";
+			document.querySelector(".box").style.transition = "0.5s";
+			document.querySelectorAll('.btn-opt p').forEach((e)=>{
+				e.classList.remove("active");
+			})
+			document.querySelectorAll('.btn-opt p')[1].classList.add("active");
+		})
+		document.querySelectorAll('.btn-opt p')[0].addEventListener("click",()=>{
+			document.querySelector(".box").style.left = "0%";
+			document.querySelector(".box").style.transition = "0.5s";
+		})
+	</script>
+</body>
+</html>
